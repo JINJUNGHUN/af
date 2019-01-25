@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>메인 이미지</strong>
+  <% if @post.image? %>
+    <%= image_tag @post.image.url(:thumb) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>서브 이미지</strong>
+  <% @post_attachments.each do |p| %>
+    <%= image_tag p.avatar_url(:thumb) %>
+    <%= link_to "수정하기", edit_post_attachment_path(p) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @post.temperature %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @post.time %>
+</p>
+
+<h3>레시피 재료</h3>
+  <% for @ingredient in @post.ingredients %>
+    <li><%= @ingredient.content %></li>
+  <% end %>
+
+<h3>레시피 방법</h3>
+  <% for @step in @post.steps %>
+    <li><%= @step.direction %></li>
+  <% end %>
+
+<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

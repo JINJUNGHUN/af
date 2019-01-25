@@ -1,0 +1,73 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label "대표이미지" %>
+    <%= form.file_field :image, class: "form-control" %>
+
+    <% if @post.image? %>
+      <%= image_tag @post.image.url %>
+      <%= form.check_box :remove_image %> 삭제하기
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.fields_for :post_attachments do |p| %>
+        <%= p.label "서브 이미지" %><br>
+        <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :temperature %>
+    <%= form.number_field :temperature, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :time %>
+    <%= form.number_field :time, class: "form-control" %>
+  </div>
+
+  <h3>레시피 재료</h3>
+  <div class="form-group">
+    <%= form.nested_fields_for :ingredients do |ingredient| %>
+      <%= ingredient.text_field :content %>
+      <%= ingredient.remove_nested_fields_link %>
+    <% end %>
+    <%= form.add_nested_fields_link :ingredients %>
+  </div>
+
+  <h3>레시피 방법</h3>
+  <div class="form-group">
+    <%= form.nested_fields_for :steps do |step| %>
+      <%= step.text_field :direction %>
+      <%= step.remove_nested_fields_link %>
+    <% end %>
+    <%= form.add_nested_fields_link :steps %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

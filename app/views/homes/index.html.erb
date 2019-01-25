@@ -1,0 +1,22 @@
+
+<div>
+<% if user_signed_in? %>
+        <%= link_to "회원정보", edit_user_registration_path %>
+        <%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
+<% else %>
+        <%= link_to "로그인", user_session_path %>
+        <%= link_to "회원가입", "/users/sign_up" %>
+<% end %>
+</div>
+<hr/>
+<%= alert %>
+<%= notice %>
+<h2 style="font-weight: bold">로그인 정보</h2>
+<% if user_signed_in? %>
+    <div>
+        아이디 : <%= current_user.email %><br/>
+        유저 No. : <%= current_user.id %>
+    </div>
+<% else %>
+    로그인 되어있지 않음.
+<% end %>

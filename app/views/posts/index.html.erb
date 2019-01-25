@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div id="wrap">
+  <div class="container">
+    <div class="create-button">
+      <%= link_to '레시피 공유하기', new_post_path %>
+      <%= render 'searches/search_form', post: @posts.klass %>
+    </div>
+    <div class="row">
+      <% @posts.each do |post| %>
+      <div class="col-md-3">
+        <div class="recipe-box">
+          <% if post.image? %>
+            <%= link_to (image_tag post.image.url, class: "recipe-index"), post %>
+          <% end %>
+          <ul>
+            <li><%= post.title %></li>
+              <div class="option">
+                <div class="index-temperature">
+                  온도<br>
+                  <div class="text-temperature">
+                  <%= post.temperature %>
+                  </div>
+                </div>
+                <div class="index-time">
+                  시간<br>
+                  <div class="text-time">
+                  <%= post.time %>
+                  </div>
+                </div>
+                <%= post.user.email %>
+              </div>
+            <!-- <li>
+              <%= link_to 'Show', post %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </li> -->
+          </ul>
+        </div> <!--/recipe-box-->
+      </div> <!--/col-md-3-->
+      <% end %>
+    </div> <!--/row-->
+  </div> <!--/container-->
+</div> <!--/wrap-->
+<br>

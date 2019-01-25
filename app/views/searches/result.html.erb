@@ -1,0 +1,29 @@
+<h1>검색 결과</h1>
+
+<div class="container">
+  <% @searches.each do |post| %>
+  <div class="col-md-3">
+    <div class="recipe-box">
+    <%= link_to (image_tag post.image.url, class: "recipe-index"), post %>
+      <ul>
+        <li><%= post.title %></li>
+        <div class="option">
+          <div class="index-temperature">
+          온도<br>
+            <div class="text-temperature">
+            <%= post.temperature %>
+            </div>
+          </div>
+          <div class="index-time">
+          시간<br>
+            <div class="text-time">
+            <%= post.time %>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div> <!--/recipe-box-->
+  </div> <!--/col-md-3-->
+  <% end %>
+  <%= @test %>
+</div>
