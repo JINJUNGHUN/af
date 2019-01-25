@@ -9,3 +9,9 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+NAVER_CLIENT_ID: "dRLy90pTKaPXcR8FPvs_"
+NAVER_ClIENT_SECRET: "H1xDUFJvLu"
+
+GOOGLE_CLIENT_ID: "28625784168-cmij3nab4mnprph3fm35s1la0abcf5s4.apps.googleusercontent.com"
+GOOGLE_ClIENT_SECRET: "3Uxeauvcww5fN29-Px09FHiC"

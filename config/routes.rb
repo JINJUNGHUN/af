@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'homes/index'
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' }
   get 'searches/result'
   resources :post_attachments
   resources :posts
@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   get 'pages/about'
-  
+
 end

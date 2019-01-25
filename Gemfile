@@ -19,6 +19,11 @@ gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'rmagick', '~> 2.16'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 gem 'figaro'
+gem 'omniauth'
+gem 'omniauth-naver', '~>0.1.0'
+gem 'omniauth-google-oauth2'
+
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
