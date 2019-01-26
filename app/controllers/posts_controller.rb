@@ -11,6 +11,9 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post_attachments = @post.post_attachments.all
+
+    @post = Post.find(params[:id])
+    @new_comment = Comment.build_from(@post, current_user.id, "")
   end
 
   # GET /posts/new

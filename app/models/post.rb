@@ -11,5 +11,6 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :post_attachments
 
   belongs_to :user
+  acts_as_commentable
 
 end

@@ -22,6 +22,8 @@ gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-naver', '~>0.1.0'
 gem 'omniauth-google-oauth2'
+gem 'acts_as_commentable_with_threading'
+
 
 
 

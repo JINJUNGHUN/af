@@ -9,4 +9,7 @@ Rails.application.routes.draw do
 
   get 'pages/about'
 
+  resources :comments, only: [:create, :destroy]
+
+
 end
