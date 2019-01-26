@@ -1,4 +1,4 @@
-<h1>검색 결과</h1>
+<h2 class="text-center" style="margin-top: 30px;">검색 결과</h2>
 
 <div class="container">
   <% @searches.each do |post| %>
@@ -24,6 +24,9 @@
       </ul>
     </div> <!--/recipe-box-->
   </div> <!--/col-md-3-->
+  <% end %>
+  <% if @searches.all.empty? %>
+    <h3 class="text-center" style="margin-top: 30px;">게시글이 없습니다.</h3>
   <% end %>
   <%= @test %>
 </div>

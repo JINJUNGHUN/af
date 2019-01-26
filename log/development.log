@@ -10046,3 +10046,149 @@ Processing by RailsDb::TablesController#data as JS
 Completed 200 OK in 212ms (Views: 179.5ms | ActiveRecord: 5.0ms)
 
 
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 12:59:11 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jay/.rvm/gems/ruby-2.4.4/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 03:59:11.575066') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  Rendered searches/result.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navbar.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 540ms (Views: 523.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-26 12:59:14 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered searches/_search_form.html.erb (0.9ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  Rendered posts/index.html.erb within layouts/application (55.8ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 123ms (Views: 116.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 12:59:17 +0900
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 03:59:17.377856') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  Rendered searches/result.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 77.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-26 12:59:18 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered searches/_search_form.html.erb (1.6ms)
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  Rendered posts/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 103ms (Views: 98.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-26 13:01:13 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered searches/_search_form.html.erb (0.8ms)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  Rendered posts/index.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_navbar.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 13:01:16 +0900
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 04:01:16.869075') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE (created_at >= '2018-01-26 04:01:16.869075') AND (title like '%다다다%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/result.html.erb:28
+  Rendered searches/result.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 83.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 13:01:24 +0900
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 04:01:24.904131') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE (created_at >= '2018-01-26 04:01:24.904131') AND (title like '%다다다%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/result.html.erb:28
+  Rendered searches/result.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 121ms (Views: 116.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 13:01:45 +0900
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 04:01:45.134275') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  [1m[36mPost Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE (created_at >= '2018-01-26 04:01:45.134275') AND (title like '%다다다%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/result.html.erb:28
+  Rendered searches/result.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 110ms (Views: 106.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/searches/result?utf8=%E2%9C%93&search_text=%EB%8B%A4%EB%8B%A4%EB%8B%A4&bulletin=Post&commit=%EA%B2%80%EC%83%89" for 127.0.0.1 at 2019-01-26 13:02:40 +0900
+Processing by SearchesController#result as HTML
+  Parameters: {"utf8"=>"✓", "search_text"=>"다다다", "bulletin"=>"Post", "commit"=>"검색"}
+  Rendering searches/result.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE (created_at >= '2018-01-26 04:02:40.511764') AND (title like '%다다다%')[0m
+  ↳ app/views/searches/result.html.erb:4
+  [1m[36mPost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "posts" WHERE (created_at >= '2018-01-26 04:02:40.511764') AND (title like '%다다다%') LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/searches/result.html.erb:28
+  Rendered searches/result.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 92ms (Views: 88.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-26 13:02:44 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  Rendered searches/_search_form.html.erb (0.5ms)
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:30
+  Rendered posts/index.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 76ms (Views: 72.9ms | ActiveRecord: 0.3ms)
+
+
