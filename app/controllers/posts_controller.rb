@@ -1,10 +1,37 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  # 조회수
+  impressionist actions: [:show]
+  # , unique: [:ip_address] 서비스 시 위의 코드와 결합
+
+  def hashtags
+      tag = Tag.find_by(name: params[:name])
+      @posts = tag.posts
+      @posts = Post.order("created_at DESC").page(params[:page]).per(4)
+  end
+
+  def like_toggle
+    like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+    if like.nil? # 좋아요가 없다면?
+      Like.create(user_id: current_user.id, post_id: params[:post_id])
+    else # 좋아요가 있다면?
+      like.destroy
+    end
+    redirect_to posts_url
+  end
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+      @posts = Post.order("created_at DESC").page(params[:page]).per(4)
+    else
+      @posts = Post.all
+      @posts = Post.order("created_at DESC").page(params[:page]).per(4)
+    end
   end
 
   # GET /posts/1
@@ -69,6 +96,8 @@ class PostsController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -78,6 +107,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params[:post][:user_id] = current_user.id
-      params.require(:post).permit(:user_id, :remove_image, :image, :title, :description, :temperature, :time, ingredients_attributes:[:id, :content, :_destroy], steps_attributes:[:id, :direction, :_destroy], post_attachments_attributes: [:id, :post_id, :avatar])
+      params.require(:post).permit(:likes, :category_id, :nickname, :user_id, :remove_image, :image, :title, :description, :temperature, :time, ingredients_attributes:[:id, :content, :_destroy], steps_attributes:[:id, :direction, :_destroy], post_attachments_attributes: [:id, :post_id, :avatar],)
     end
 end

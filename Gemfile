@@ -23,7 +23,12 @@ gem 'omniauth'
 gem 'omniauth-naver', '~>0.1.0'
 gem 'omniauth-google-oauth2'
 gem 'acts_as_commentable_with_threading'
-
+gem 'rails_admin'
+gem 'kaminari'
+gem 'cancancan'
+gem 'rolify'
+gem 'devise-i18n'
+gem 'impressionist'
 
 
 

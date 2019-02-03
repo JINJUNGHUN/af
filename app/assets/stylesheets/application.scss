@@ -1,90 +1,119 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "navbar";
+@import "footer";
+@import "posts";
 
-#wrap {
-  min-width: 1024px;
-}
 
-.create-button {
-  text-align: right;
-}
-
-.recipe-box {
-  height: 400px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
-}
-
-.recipe-box ul {
-  list-style-type: none;
-  padding-left: 0px;
-}
-
-.recipe-box li:first-child {
-  border: 1px solid black;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 60px;
-  padding-right: 60px;
-  background-color: #2f2f2f;
-  text-align: center;
+.log-out {
   font-family: NanumBarunGothicOTF;
   font-size: 30px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
-  letter-spacing: -0.8px;
-  color: #ffffff;
-
-}
-
-img.recipe-index {
-  width: 100%;
-  height: 60%;
-  object-fit: cover;
-}
-
-.option {
+  letter-spacing: normal;
   text-align: center;
+}
+
+.log-out a{
+  color: #0f0f0f;
+}
+
+
+.wrapper {
+	margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
+
+  .form-signin-heading,
+	.checkbox {
+	  margin-bottom: 30px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+    margin-bottom: 10px;
+
+		&:focus {
+		  z-index: 2;
+		}
+	}
+
+#nickname-form{
+  margin-bottom: 10px;
+}
+
+.new-password {
+  float: right;
+  color: #9b9b9b;
   font-family: NanumBarunGothicOTF;
-  font-size: 18px;
-  background-color: #ffffff;
-  margin-top: 15px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  margin-bottom: 30px;
 }
 
-.index-temperature {
-  width: 50%;
-  float: left;
-  border-right: 1px solid black;
-}
 
-.index-time {
-  width: 50%;
-  float: left;
-}
-
-.text-temperature {
+.btn {
+  background-color: #000000;
+  border-color: #d3d3d3;
   font-family: NanumBarunGothicOTF;
-  font-size: 35px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: center;
-  color: #2f2f2f;
 }
 
-.text-time {
+#new-registrantion {
+  background-color: #FFFFFF;
+  color: #000000;
   font-family: NanumBarunGothicOTF;
-  font-size: 35px;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  text-align: center;
-  color: #2f2f2f;
+}
+
+#new-registrantion-naver {
+  background-color: #FFFFFF;
+  color: #1EC800
+}
+
+#new-registrantion-google {
+  background-color: #FFFFFF;
+  color: #DD4839;
+}
+
+	input[type="text"] {
+	  margin-bottom: -1px;
+	  border-bottom-left-radius: 0;
+	  border-bottom-right-radius: 0;
+	}
+
+	input[type="password"] {
+	  border-top-left-radius: 0;
+	  border-top-right-radius: 0;
+	}
+
 }

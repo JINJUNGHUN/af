@@ -1,8 +1,77 @@
-#serch-button {
-  float: right;
-  margin-right: 20%;
+.navbar {
+  border-bottom: 1px solid rgba(201, 201, 201, 0.8);
+  margin-bottom: 0px;
 }
 
 .navbar-brand {
   margin-left: 10%;
+}
+
+#navbarSupportedContent {
+  text-align: right;
+  padding-right: 0px;
+}
+
+.login-info {
+  font-family: NanumBarunGothicOTF;
+  font-size: 27px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  margin-top: 10px;
+  text-align: -webkit-right;
+}
+
+.login-info a {
+  font-family: NanumBarunGothicOTF;
+  font-size: 27px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+}
+
+.welcome {
+  font-family: NanumBarunGothicOTF;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  padding-bottom: 5px;
+}
+
+.create-button {
+  text-align: center;
+  font-family: NanumBarunGothicOTF;
+  font-size: 27px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  background-color: #151515;
+  width: 200px;
+  height: 40px;
+}
+
+.create-button a {
+  font-family: NanumBarunGothicOTF;
+  font-size: 27px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+  position: relative;
+  top: 10%;
+
 }

@@ -1,7 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Category.destroy_all
+
+beef = Category.create!(name: "소고기")
+pork = Category.create!(name: "돼지고기")
+chicken = Category.create!(name: "닭고기")
+seafood = Category.create!(name: "해산물")
+etc = Category.create!(name: "기타")

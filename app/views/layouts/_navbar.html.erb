@@ -1,7 +1,31 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="padding-bottom: 20px;">
   <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   <!-- <%= link_to "에어프라이어 나만없어", root_path, class: 'navbar-brand' %> -->
   <%= link_to(image_tag("main_logo.png"), root_path, class: 'navbar-brand') %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="width: 600px;">
+    <div class="login-info">
+      <div class="welcome">
+      <% if current_user %>
+        <% if current_user.name %>
+        <%= link_to current_user.name, pages_mypage_path  %> 님 반갑습니다 <br>
+        <% else current_user.nickname %>
+        <%= link_to current_user.nickname, pages_mypage_path %> 님 반갑습니다 <br>
+        <% end %>
+      </div>
+      <div class="login-info-text">
+        <!-- <%= link_to '로그아웃', destroy_user_session_path, method: :delete %> /
+        <%= link_to '마이페이지', pages_mypage_path %> -->
+        <% else %>
+        <%= link_to '로그인', new_user_session_path %> /
+        <%= link_to '회원가입', new_user_registration_path %>
+        <% end %>
+      </div>
+      <div class="create-button">
+        <%= link_to '레시피 공유하기', new_post_path %>
+      </div>
+
+    </div>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

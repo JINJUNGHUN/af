@@ -1,4 +1,21 @@
 class User < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
+  after_create :assign_default_role
+
+  validates_presence_of   :image
+  validates_integrity_of  :image
+  validates_processing_of :image
+
+  has_many :posts
+  has_many :likes, dependent: :destroy
+
+  def assign_default_role
+    add_role(:people)
+  end
+
+  rolify
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
