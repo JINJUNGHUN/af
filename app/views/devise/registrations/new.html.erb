@@ -2,7 +2,7 @@
   <div class="wrapper">
     <form class="form-signin">
       <h2 class="form-signin-heading">회원가입</h2>
-      <%= simple_format(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f| %>
         <%= f.error_notification %>
         <%= f.label :image do %>
           <%= f.file_field :image %>
