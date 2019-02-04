@@ -31,6 +31,7 @@ gem 'cancancan'
 gem 'rolify'
 gem 'devise-i18n'
 gem 'impressionist'
+gem 'simple_form'
 
 
 
